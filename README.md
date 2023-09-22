@@ -1,0 +1,1 @@
+- Keep track of which words we wrote, so that we can edit them in analyzed form
