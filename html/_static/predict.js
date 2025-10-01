@@ -100,7 +100,7 @@
 		let sqlPromise = initSqlJs({
 			locateFile: filename => `https://cdn.jsdelivr.net/npm/sql.js@1.12/dist/${filename}`
 		});
-		let dataPromise = fetch('../predict.sqlite').then(res => res.arrayBuffer());
+		let dataPromise = fetch('predict.sqlite').then(res => res.arrayBuffer());
 		const [SQL, data] = await Promise.all([sqlPromise, dataPromise])
 
 		db = new SQL.Database(new Uint8Array(data));

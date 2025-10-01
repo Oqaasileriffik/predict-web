@@ -34,7 +34,7 @@ while ($a === 'cs') {
 
 	$rv['ana'] = $ana;
 	$ana = escapeshellarg($ana);
-	$out = explode("\n", trim(shell_exec("echo $ana | ~/apertium/hfst/tools/src/hfst-optimized-lookup -p ~/langtech/kal/src/fst/generator-gt-norm.hfstol | sort | uniq"), " \r\n\v\0"));
+	$out = explode("\n", trim(shell_exec("echo $ana | /home/tino/apertium/hfst/tools/src/hfst-optimized-lookup -p /home/tino/langtech/kal/src/fst/generator-gt-norm.hfstol | sort | uniq"), " \r\n\v\0"));
 	if ($out[0][0] === "\t") {
 		$rv['cs'] = $out[0];
 		$rv['cs'] = preg_replace('~\t[+]~u', ' ', $rv['cs']);
